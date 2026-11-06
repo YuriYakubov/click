@@ -59,6 +59,11 @@ provided, the type is assumed to be {data}`STRING`. See
    tools should gracefully degrade into becoming no ops. We think this
    because command line tools are often invoked with wildcard inputs
    and they should not error out if the wildcard is empty.
+
+   Additionally, when invoking a command programmatically (such as with
+   {meth}`Context.invoke`), command-line argument parsing is bypassed.
+   Required arguments that are omitted will default to `None` (or their
+   configured default value) rather than raising a missing argument error.
 ```
 
 ## Multiple Arguments
